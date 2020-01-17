@@ -19,6 +19,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Vibur&display=swap" rel="stylesheet"> 
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
@@ -27,33 +28,80 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.css">
+    <?= $this->Html->script('jquery.min.js') ?>
+    <?= $this->HTML->css('bootstrap/css/bootstrap.min.css') ?>
+    <?= $this->HTML->css('bootstrap/css/home.css') ?>
+    <?= $this->HTML->script('bootstrap.min.js') ?>
+    <?= $this->HTML->script('popper.min.js') ?>
+    <?= $this->HTML->script('app.js') ?>
+    <?= $this->HTML->script('creative.js') ?>
+    <?= $this->HTML->script('creative.min.js') ?>
 
-    <?= $this->Html->css('milligram.min.css') ?>
-    <?= $this->Html->css('cake.css') ?>
+    
+
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
+    <style>
+
+        .gachance {
+          font-family: 'Vibur', cursive;
+        }
+
+
+    </style>
+  
 </head>
 <body>
-    <nav class="top-nav">
-        <div class="top-nav-title">
-            <a href="/"><span>Cake</span>PHP</a>
+<div class="top-nav">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light py-3" id="mainNav">
+      <div class="container">
+        <a href="../" class="navbar-brand gachance">gachance!</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="">Market</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Sell</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Register</a>
+            </li>
+          </ul>
         </div>
-        <div class="top-nav-links">
-            <a target="_blank" href="https://book.cakephp.org/4/">Documentation</a>
-            <a target="_blank" href="https://api.cakephp.org/4/">API</a>
-        </div>
+      </div>
     </nav>
+    </div>
+
+
     <main class="main">
-        <div class="container">
             <?= $this->Flash->render() ?>
             <?= $this->fetch('content') ?>
-        </div>
     </main>
-    <footer>
-    </footer>
+    
+    
+
+    <footer class="footer shadow-sm">
+      <div class="container">
+          <div class="row align-items-center text-center">
+              <div class="col-md-12">
+                  <span class="copyright">&copy; Gachance 2020</span>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+
 </body>
 </html>
