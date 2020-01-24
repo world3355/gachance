@@ -150,11 +150,11 @@ class UsersController extends AppController
         return $this->redirect($this->Auth->logout());
     }
 
-    // public function beforeFilter(EventInterface $event)
-    // {
-    //     $this->Auth->allow(['login','add']);
-    //     $this->set('Auth', $this->Auth);
-    // }
+    public function beforeFilter(EventInterface $event)
+    {
+        $this->Auth->allow(['login','add']);
+        $this->set('Auth', $this->Auth);
+    }
 
     public function isAuthorized($user = null)
     {

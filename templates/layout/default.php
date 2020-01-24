@@ -47,15 +47,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
         .gachance {
           font-family: 'Vibur', cursive;
-<<<<<<< HEAD
           font-size: 25px;
         }
 
-=======
-        }
 
-
->>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
     </style>
   
 </head>
@@ -63,12 +58,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 <div class="top-nav">
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light py-3" id="mainNav">
       <div class="container">
-<<<<<<< HEAD
+
         <!-- <a href="http://localhost:80/gachance/" class="navbar-brand gachance">gachance!</a> -->
         <?php echo $this->Html->link('gachance!', ['controller' => 'Home', 'action' => 'index'], ['class' => 'navbar-brand gachance']); ?>
-=======
-        <a href="../" class="navbar-brand gachance">gachance!</a>
->>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
+        <!-- <a href="../" class="navbar-brand gachance">gachance!</a> -->
+
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -84,21 +78,13 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           </ul>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-<<<<<<< HEAD
-              <!-- <a href="http://localhost:80/gachance/users/login" class="nav-link" href="">Login</a> -->
-              <?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']); ?>
-            </li>
-            <li class="nav-item">
-              <!-- <a href="http://localhost:80/gachance/users/add" class="nav-link" href="">Register</a> -->
-              <?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']); ?>
-=======
               <a class="nav-link" href="">Login</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">Register</a>
->>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
             </li>
           </ul>
+          
         </div>
       </div>
     </nav>
