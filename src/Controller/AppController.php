@@ -17,9 +17,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+<<<<<<< HEAD
 use Cake\Event\Event;
 use Cake\View\Helper\HtmlHelper;
 use Cake\Event\EventInterface;
+=======
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
 
 /**
  * Application Controller
@@ -46,11 +49,16 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
         /*
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+<<<<<<< HEAD
 
         $this->loadComponent('Auth',
                             [
@@ -74,4 +82,7 @@ class AppController extends Controller
         $this->set('Auth', $this->Auth);
     }
 
+=======
+    }
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
 }

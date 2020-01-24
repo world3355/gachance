@@ -11,13 +11,19 @@ CREATE TABLE `users` (
 	PRIMARY KEY (`user_id`),
     UNIQUE KEY ninkname_UNIQUE (`nickname`)
 )
+<<<<<<< HEAD
 ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+=======
+COLLATE=`utf8_general_ci`
+ENGINE=InnoDB;
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
 
 
 
 INSERT INTO `users` (`email`, `password`, `nickname`, `name`, `phone`, `created`) VALUES ('test21@cakephp.org', '0000', 'pyeongha', '평강', '0101234021', now());
 
 
+<<<<<<< HEAD
 user : markets = 1 : n
 
 category : markets = 1 : n 
@@ -41,12 +47,32 @@ CREATE TABLE `markets` (
     PRIMARY KEY (`product_id`),
     KEY `user_id` (`user_id`),
     KEY `category_id` (`category_id`)
+=======
+
+
+
+CREATE TABLE `products` (
+    `product_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `user_id` INT(11) NOT NULL,
+    `category_id` INT(11) NOT NULL,
+    `product_name` VARCHAR(50) NOT NULL,
+    `price` INT(40) NOT NULL,
+    `product_img` VARCHAR(255) NOT NULL,
+    `condition` VARCHAR(50) NOT NULL,
+    `exchange` VARCHAR(50) NOT NULL,
+    `recommended` INT(40) NOT NULL,
+    `product_info` VARCHAR(255) NOT NULL,
+    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+	`modified` DATETIME NULL DEFAULT NULL,
+    PRIMARY KEY (`product_id`)
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
 )
 COLLATE=`utf8_general_ci`
 ENGINE=InnoDB;
 
 
 
+<<<<<<< HEAD
 >>카테고리 없음
 CREATE TABLE `markets` (
     `market_id` INT(11) NOT NULL AUTO_INCREMENT,
@@ -68,6 +94,8 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 카테고리 -> 가챠에서 세부적으로 - 애니매이션, 독특한,
+=======
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
 
 
 

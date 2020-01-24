@@ -76,7 +76,11 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
+<<<<<<< HEAD
         'salt' => env('SECURITY_SALT','r73BnqkkHj6lhmqe74MRmoY8b4D1q0Ry1IBLuhlGER4H7sA6wdk40uP0F1WmHh0O'),
+=======
+        'salt' => env('SECURITY_SALT'),
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
     ],
 
     /*
@@ -210,7 +214,11 @@ return [
              * The keys host, port, timeout, username, password, client and tls
              * are used in SMTP transports
              */
+<<<<<<< HEAD
             'host' => '127.0.0.1',
+=======
+            'host' => 'localhost',
+>>>>>>> 5e99c25b0aad20fc7f4ef407c757ff1cfade4a11
             'port' => 25,
             'timeout' => 30,
             /*
