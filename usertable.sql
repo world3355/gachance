@@ -75,13 +75,12 @@ ENGINE=InnoDB;
 CREATE TABLE `markets` (
     `market_id` INT(11) NOT NULL AUTO_INCREMENT,
     `product_name` VARCHAR(50) NOT NULL,
-    `price` INT(30) NOT NULL,
-    `product_cnt` INT(10) NOT NULL,
+    `product_price` INT(30) NOT NULL,
     `product_img` VARCHAR(255) NOT NULL,
     `product_info` VARCHAR(255) NOT NULL,
-    `condition` VARCHAR(50) NOT NULL,
-    `exchange` VARCHAR(50) NOT NULL,
-    `recommended` INT(30) NOT NULL,
+    `product_condition` VARCHAR(50) NOT NULL,
+    `product_exchange` VARCHAR(50) NOT NULL,
+    `product_recommended` INT(30) NOT NULL,
     `user_id` INT(11) NOT NULL,
     `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 	`modified` DATETIME NULL DEFAULT NULL,
@@ -92,6 +91,7 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 
 카테고리 -> 가챠에서 세부적으로 - 애니매이션, 독특한,
+1
 
 
 

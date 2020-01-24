@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-?>
+
 <head>
     <style>
         body {
