@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-use Cake\Datasource\EntityInterface;
+
 /**
  * Markets Controller
  *
@@ -53,41 +53,13 @@ class MarketsController extends AppController
         $market = $this->Markets->newEmptyEntity();
         $user_id = $this->Auth->user()['user_id'];
         if ($this->request->is('post')) {
-            // $market = $this->Markets->patchEntity($market, $this->request->getData());
-            // if ($this->Markets->save($market)) {
-            //     $this->Flash->success(__('The market has been saved.'));
+            $market = $this->Markets->patchEntity($market, $this->request->getData());
+            if ($this->Markets->save($market)) {
+                $this->Flash->success(__('The market has been saved.'));
 
-            //     return $this->redirect(['action' => 'index']);
-            // }
-            // $this->Flash->error(__('The market could not be saved. Please, try again.'));
-
-            // $file=$this->request->getData('product_img');
-            // $filePath= '../webroot/img/' . date("YmdHis") . $file['name'];
-
-            $file_name = $_FILES['product_img']['name'];
-            $tmp_file = $_FILES['product_img']['tmp_name'];
-            $file_path = WWW_ROOT . 'img/' . date("YmdHis") . $file_name;
-
-            move_uploaded_file($tmp_file, $file_path);
-            $data = array(
-                'product_name' => $this->request->getData('product_name'),
-                'product_price' => $this->request->getData('product_price'),
-                'product_img' => date("YmdHis") . $file_name,
-                'product_info' => $this->request->getData('product_info'),
-                'product_condition' => $this->request->getData('product_condition'),
-                'product_exchange' => $this->request->getData('product_exchange'),
-                'product_recommended' => $this->request->getData('product_recommended'),
-                'user_id' => $this->Auth->user()['user_id']
-            );
-
-                $market = $this->Markets->newEntity($data);
-                if ($this->Markets->save($market)) {
-                    $this->Flash->success(__('The market has been saved.'));
-    
-                    return $this->redirect(['action' => 'index']);
-                }
-                $this->Flash->error(__('The market could not be saved. Please, try again.'));
-
+                return $this->redirect(['action' => 'index']);
+            }
+            $this->Flash->error(__('The market could not be saved. Please, try again.'));
         }
         // $users = $this->Markets->Users->find('list', ['limit' => 200]);
         // $this->set(compact('market', 'users'));

@@ -22,14 +22,13 @@
         </aside>
         <div class="column-responsive column-80">
             <div class="markets form content">
-                <?= $this->Form->create($market, ['type'=>'file']) ?>
+                <?= $this->Form->create($market) ?>
                 <fieldset>
                     <legend><?= __('Add Market') ?></legend>
                     <?php
                         echo $this->Form->control('product_name');
                         echo $this->Form->control('product_price');
-                        echo '아이콘설정';
-                        echo $this->Form->file('product_img', ['name'=>'product_img']);
+                        echo $this->Form->control('product_img');
                         echo $this->Form->control('product_info');
                         echo $this->Form->control('product_condition');
                         echo $this->Form->control('product_exchange');

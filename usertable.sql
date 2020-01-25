@@ -139,3 +139,26 @@ COLLATE=`utf8_general_ci`
 ENGINE=InnoDB;
 
 
+
+
+
+---------------------------------------------------------------------------------
+
+CREATE TABLE `markets` (
+    `market_id` INT(11) NOT NULL AUTO_INCREMENT,
+    `product_name` VARCHAR(50) NOT NULL DEFAULT 'name',
+    `product_price` INT(30) NOT NULL DEFAULT '0',
+    `product_img` VARCHAR(255) NOT NULL DEFAULT 'img',
+    `product_info` VARCHAR(255) NOT NULL DEFAULT 'info',
+    `product_condition` VARCHAR(50) NOT NULL DEFAULT 'condition',
+    `product_exchange` VARCHAR(50) NOT NULL DEFAULT 'exchange',
+    `product_recommended` INT(30) NOT NULL DEFAULT '0',
+    `user_id` INT(11) NOT NULL DEFAULT '0', 
+    `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+	`modified` DATETIME NULL DEFAULT NULL,
+    PRIMARY KEY (`market_id`),
+    KEY `user_id` (`user_id`)
+)
+ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+

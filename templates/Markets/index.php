@@ -40,7 +40,9 @@
                         <td><?= $this->Number->format($market->market_id) ?></td>
                         <td><?= h($market->product_name) ?></td>
                         <td><?= $this->Number->format($market->product_price) ?></td>
-                        <td><?= h($market->product_img) ?></td>
+
+                        <td><?= $this->Html->image($market->product_img, array('height' => 100, 'width' => 100)) ?></td>
+
                         <td><?= h($market->product_info) ?></td>
                         <td><?= h($market->product_condition) ?></td>
                         <td><?= h($market->product_exchange) ?></td>
