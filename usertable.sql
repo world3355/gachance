@@ -80,7 +80,7 @@ CREATE TABLE `markets` (
     `product_info` VARCHAR(255) NOT NULL,
     `product_condition` VARCHAR(50) NOT NULL,
     `product_exchange` VARCHAR(50) NOT NULL,
-    `product_recommended` INT(30) NOT NULL,
+    `product_recommended` INT(30) NOT NULL DEFAULT '0',
     `user_id` INT(11) NOT NULL,
     `created` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ,
 	`modified` DATETIME NULL DEFAULT NULL,
