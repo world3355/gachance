@@ -29,14 +29,33 @@
             });
         }
         
+        $(function () {
+            $('#btn-upload').click(function (e) {
+                e.preventDefault();
+                $('#img-input').click();
+            });
+        });
+
+    
+
+        function changeValue(obj){
+    	    alert(obj.value);
+        }
+
+
     </script>
    
     <style>
-        body {
+
+        .main {
+            height: 100vh;
+        }
+
+        .market-page {
             margin-top:100px;
         }
         
-        
+        #img-input { display:none; } 
         
 
         .product-select {
@@ -48,6 +67,10 @@
         .product-condi {
             margin-right: 30px;
         }
+
+        .input {
+            margin-bottom: 31px;
+        }
         
 
     </style>
@@ -56,7 +79,7 @@
     
 </head>
 <body>
-    <div class="container" >
+    <div class="container market-page" >
         <div class="bs-docs-section">
           <?= $this->Form->create($market, ['type'=>'file' , 'class'=>'']) ?>
           
@@ -72,13 +95,14 @@
                         <hr />
 
                             <div class="form-group text-center">
-                                <img class="" id="holder" alt="d" width="360px" height="360px" src="<?php echo $this->Url->image('default_image.jpg'); ?>" >
+                                <img class="" id="holder" alt="d" width="420px" height="420px" src="<?php echo $this->Url->image('default_image.jpg'); ?>" >
                             </div>
-                            <fieldset>
+                            <div class="text-center">
                                 <?php
-                                    echo $this->Form->file('product_img', ['name'=>'product_img' , 'id' => 'img-input']);
+                                    echo $this->Form->file('product_img', ['name'=>'product_img' , 'id' => 'img-input' , 'type' => 'hidden']);
                                 ?>
-                            </fieldset>
+                                <button type="button" id="btn-upload" class="btn btn-info" onchange = 'changeValue(this)'>upload</button>
+                            </div>
 
 
                     </div>
@@ -101,27 +125,46 @@
                                 ?>
                             </fieldset>
                             
-                            <fieldset class="row product-select">
-                               <div class="product-condi">
+                            <fieldset>
+                              
+                                <div class="row product-select">
+                                   <div class="product-condi">
+                                        <?php
+                                            echo $this->Form->control('product_condition', [ 'class'=>'form-control product-condi', 'type' => 'select', 'options' => ['최상','보통','최저'] ]);
+                                        ?>
+                                   </div>
+                                   <div>
+                                        <?php
+                                            echo $this->Form->control('product_exchange', [ 'class'=>'form-control product-excha', 'type' => 'select' ,'options' => ['가능','불가능'] ]);
+                                        ?>
+                                   </div>
+                                </div>
+                                   
+                                <div>  
                                     <?php
-                                        echo $this->Form->control('product_condition', [ 'class'=>'form-control product-condi', 'type' => 'select', 'options' => ['최상','보통','최저'] ]);
-                                    ?>
-                               </div>
-                                    <?php
-                                        echo $this->Form->control('product_exchange', [ 'class'=>'form-control product-excha', 'type' => 'select' ,'options' => ['가능','불가능'] ]);
                                         echo $this->Form->control('product_recommended', [ 'type' => 'hidden', 'value' => 0 ]);
                                         echo $this->Form->control('user_id' , [ 'label' => '작성자' , 'type' => 'hidden' , 'id' => 'user_id' , 'value' => $user_id ]);
                                     ?>
+                                </div>    
+                                
                             </fieldset>
                             
+                            
+<!--
                             <?= $this->Form->button(__('Submit')) ?>
                             <?= $this->Form->end() ?>
+-->
                         </div>
 
                 </div> 
 
             </div>
             
+            
+            <div class="text-center">
+                <?= $this->Form->button( 'Submit', ['class'=>'btn btn-success btn-lg']) ?>
+                <?= $this->Form->end() ?>
+            </div>
             
             
             
