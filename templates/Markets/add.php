@@ -130,12 +130,12 @@
                                 <div class="row product-select">
                                    <div class="product-condi">
                                         <?php
-                                            echo $this->Form->control('product_condition', [ 'class'=>'form-control product-condi', 'type' => 'select', 'options' => ['최상','보통','최저'] ]);
+                                            echo $this->Form->control('product_condition', [ 'class'=>'form-control product-condi', 'type' => 'select', 'options' => ['未使用','目立った傷や汚れなし','傷や汚れあり'] ]);
                                         ?>
                                    </div>
                                    <div>
                                         <?php
-                                            echo $this->Form->control('product_exchange', [ 'class'=>'form-control product-excha', 'type' => 'select' ,'options' => ['가능','불가능'] ]);
+                                            echo $this->Form->control('product_exchange', [ 'class'=>'form-control product-excha', 'type' => 'select' ,'options' => ['可能','不可能'] ]);
                                         ?>
                                    </div>
                                 </div>
