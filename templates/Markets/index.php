@@ -118,25 +118,6 @@
             </div>
 
 
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
             <div class="paginator">

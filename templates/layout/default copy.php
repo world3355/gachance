@@ -37,16 +37,12 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->HTML->script('creative.js') ?>
     <?= $this->HTML->script('creative.min.js') ?>
 
+    
+
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-
     <style>
 
         .gachance {
@@ -54,60 +50,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           font-size: 25px;
         }
 
-        .dropdown {
-            position: relative;
-        }
-        
-        .navbar-nav {
-            list-style:none;
-        }
-        
-        .nav-link {
-            display: block;
-            padding: 0.5rem 1rem;
-        }
-        
-        .navbar-expand-md .navbar-nav .dropdown-menu {
-            position: absolute;
-        }
-        
-        .dropdown-menu.show {
-            display: block;
-        }
-        
-        
-        .dropdown-menu-right {
-            right: 0;
-            left: auto;
-        }
-        
-        .dropdown-menu {
-            top: 100%;
-            z-index: 1000;
-            min-width: 10rem;
-            padding : 0.5rem 0;
-            margin: 0.125rem 0 0 ;
-            background-color: #fff;
-            border: 1px solid black;
-            border-radius: 0.25rem;
-        }
-        
-        .dropdown-item { 
-            display: block;
-            width: 100%;
-            padding: 0.25rem 1.5rem;
-            clear: both;
-            color: #212529;
-            text-align: inherit;
-        }
-        
-        .dropdown-toggle {
-            text-decoration: none;
-        }
-        
-        
-    
-        
 
     </style>
   
@@ -126,19 +68,14 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </button>
 
         <div class="navbar-collapse collapse" id="navbarResponsive">
-         
-         
           <ul class="navbar-nav mr-auto my-2 my-lg-0">
             <li class="nav-item">
-            <?php echo $this->Html->link('Market', ['controller' => 'Markets', 'action' => 'index'], ['class' => 'nav-link']); ?>
+              <a class="nav-link" href="">Market</a>
             </li>
             <li class="nav-item">
-            <?php echo $this->Html->link('Sell', ['controller' => 'Markets', 'action' => 'add'], ['class' => 'nav-link']); ?>
+              <a class="nav-link" href="">Sell</a>
             </li>
           </ul>
-          
-          
-<!--
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="">Login</a>
@@ -147,42 +84,6 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
               <a class="nav-link" href="">Register</a>
             </li>
           </ul>
-          
-          
--->
-          <ul class="navbar-nav ml-auto">
-          
-          <?php if($this->getRequest()->getSession()->read('Auth')) { ?>
-
-            <div class="dropdown nav-item">
-
-                <a class="dropdown-toggle nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    <?php echo($Auth->user('nickname')) ?> 
-                    <span class="caret"></span></a>
-
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">회원정보수정</a>
-                    <a class="dropdown-item" href="#">내 활동</a>
-                    <?php echo $this->Html->link('Logout', ['controller' => 'Users', 'action' => 'logout'], ['class' => 'dropdown-item']); ?>
-                </div>
-            </div>
-
-          <?php } else { ?>  
-                                                                          
-            <li class="nav-item">
-              <?php echo $this->Html->link('Login', ['controller' => 'Users', 'action' => 'login'], ['class' => 'nav-link']); ?>
-            </li>
-            <li class="nav-item">
-              <?php echo $this->Html->link('Register', ['controller' => 'Users', 'action' => 'add'], ['class' => 'nav-link']); ?>
-            </li>
-                                                                      
-          <?php } ?>
-
-          </ul>
-                                
-
-
-
           
         </div>
       </div>

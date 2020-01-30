@@ -139,7 +139,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if($user){
                 $this->Auth->setUser($user);
-                return $this->redirect(['action' => 'index']);
+                return $this->redirect(['controller'=>'Home', 'action' => 'index']);
             }
             $this->Flash->error(__('이메일이나 비밀번호가 틀렸습니다. '));
         }

@@ -151,6 +151,10 @@
                <p class="text-black-50 mb-4">ガチャを買ったのにこれ、もうもってんじゃん！！　もしくはこれほしくなかったのに！！悔しい。。。もう一度の機会がほしい。。そこのあなた！このサービスならきっといいことがあるよ！</p>
                <a class="btn btn-light btn-xl js-scroll-trigger">加入する</a>
             </div>
+               
+            <a> <?php h($Auth->user('nickname')) ?> </a>
+
+
             </div>
          </div>
       </section>
