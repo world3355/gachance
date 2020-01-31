@@ -21,26 +21,6 @@ class UsersController extends AppController
     public function initialize(): void
     {
         parent::initialize();
-        // $this->loadComponent('Auth',
-        //                     [
-        //                         'authorize', ['controller'],
-        //                         'authenticate' => ['Form' => ['fields'=> ['username' =>
-        //                         'email',
-        //                                                                   'password' =>
-        //                         'password'
-        //                                                                   ]
-        //                                                     ]
-        //                                           ],
-        //                             'loginRedirect' => ['controller' => 'Users',
-        //                                                 'action' => 'index'
-        //                                                ],
-        //                             'logoutRedirect' => ['controller' => 'Users',
-        //                                                 'action' => 'index'
-        //                                                ],
-        //                             'authError' => 'ログインしてください',
-        //                             'storage' => 'Session'               
-        //                             ]
-        //                 );
     }
 
 

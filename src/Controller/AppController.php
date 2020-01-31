@@ -69,7 +69,7 @@ class AppController extends Controller
                                                                           ]
                                                             ]
                                                   ],
-                                    'authError' => 'ログインしてください',
+                                    'authError' => '認証が必要なサービスです。ログインしてください。',
                                     'storage' => 'Session'               
                                     ]
                         );

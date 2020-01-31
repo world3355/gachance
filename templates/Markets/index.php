@@ -54,9 +54,13 @@
 
         .ls-title { 
             margin-left:15px;
+            width: 190px;
+            display:inline-block;
 			overflow: hidden;
 			text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
 			white-space: nowrap;
+            word-wrap: normal !important;
 		}
         
 	    .ls-price {
@@ -71,6 +75,10 @@
         .yen {
             margin-top:12px;
             margin-left:5px;
+        }
+
+        a {
+            text-decoration: none;
         }
         
         
@@ -102,7 +110,7 @@
                         <hr>
 
                         <div class="space"></div>
-                        <h6 class="ls-title"><?= h($market->product_name) ?></h6>
+                        <?= $this->Html->link(__(h($market->product_name)), ['action' => 'view', $market->market_id], ['class'=>'ls-title']); ?>
 
                         <div class="row ls-price">
                         <h3 class=""><?= $this->Number->format($market->product_price) ?></h3>

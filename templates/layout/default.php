@@ -56,6 +56,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
 
         .dropdown {
             position: relative;
+            display:flex;
         }
         
         .navbar-nav {
@@ -105,7 +106,10 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             text-decoration: none;
         }
         
-        
+        .email-icon {
+            margin-top:9px;
+            margin-right:11px;
+        }
     
         
 
@@ -155,7 +159,16 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
           <?php if($this->getRequest()->getSession()->read('Auth')) { ?>
 
             <div class="dropdown nav-item">
-
+                
+                <?php echo $this->Html->link(
+                            $this->Html->image('email_icon.png',['width' => '30' , 'height' => '22', 'class'=>'email-icon']),
+                            array(
+                            'controller' => 'Home', 
+                            'action' => 'index'
+                            ), array('escape' => false)
+                        ); ?>
+                                             
+               
                 <a class="dropdown-toggle nav-link" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                     <?php echo($Auth->user('nickname')) ?> 
                     <span class="caret"></span></a>

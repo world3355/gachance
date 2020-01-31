@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 use Cake\Datasource\EntityInterface;
+use Cake\Event\EventInterface;
 /**
  * Markets Controller
  *
@@ -53,16 +54,6 @@ class MarketsController extends AppController
         $market = $this->Markets->newEmptyEntity();
         $user_id = $this->Auth->user()['user_id'];
         if ($this->request->is('post')) {
-            // $market = $this->Markets->patchEntity($market, $this->request->getData());
-            // if ($this->Markets->save($market)) {
-            //     $this->Flash->success(__('The market has been saved.'));
-
-            //     return $this->redirect(['action' => 'index']);
-            // }
-            // $this->Flash->error(__('The market could not be saved. Please, try again.'));
-
-            // $file=$this->request->getData('product_img');
-            // $filePath= '../webroot/img/' . date("YmdHis") . $file['name'];
 
             $file_name = $_FILES['product_img']['name'];
             $tmp_file = $_FILES['product_img']['tmp_name'];
@@ -89,11 +80,6 @@ class MarketsController extends AppController
                 $this->Flash->error(__('The market could not be saved. Please, try again.'));
 
         }
-        // $users = $this->Markets->Users->find('list', ['limit' => 200]);
-        // $this->set(compact('market', 'users'));
-        // debug( $this->request->getSession()->read( 'Auth' ));
-        // debug( $this->Auth->user());
-        // $user_id = $this->Auth->user()['user_id'];
         $this->set(compact('market', 'user_id'));
         $this->set( '_serialize' , [ 'market' ]);
     }
@@ -141,5 +127,11 @@ class MarketsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+    public function beforeFilter(EventInterface $event)
+    {
+        $this->Auth->allow(['index','view']);
+        $this->set('Auth', $this->Auth);
     }
 }
